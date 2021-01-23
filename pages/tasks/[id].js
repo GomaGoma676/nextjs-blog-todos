@@ -55,14 +55,14 @@ export default function Post({ staticTask, id }) {
 
 export async function getStaticPaths() {
   const paths = await getAllTaskIds();
-
   return {
     paths,
     fallback: true,
   };
 }
 export async function getStaticProps({ params }) {
-  const { task: staticTask } = await getTaskData(params.id);
+  //const { task: staticTask } = await getTaskData(params.id);
+  const staticTask = await getTaskData(params.id);
   return {
     props: {
       id: staticTask.id,
