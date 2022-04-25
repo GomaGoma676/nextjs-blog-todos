@@ -13,7 +13,7 @@ export default function Post({ staticTask, id }) {
     `${process.env.NEXT_PUBLIC_RESTAPI_URL}api/detail-task/${id}`,
     fetcher,
     {
-      initialData: staticTask,
+      fallbackData: staticTask,
     }
   );
   useEffect(() => {
